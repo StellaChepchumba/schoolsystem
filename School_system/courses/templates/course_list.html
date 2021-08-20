@@ -1,0 +1,32 @@
+<body>
+    <table>
+        {% for courses  in course %}
+        <th>Course name</th>
+        <th>Date started</th>
+        <th>Syllabus</th>
+        <th>Course id</th>
+        <th>Time in hours</th>
+        <th>Course code</th>
+        <th>Course duration</th>
+<tr>
+           <td>{{course.course_name}}</td>
+           <td>{{course.Date_started}}</td>
+           <td>{{course.syllabus}}</td>
+           <td>{{course.course_id}}</td>
+           <td>{{course.Time_in_hours}}</td>
+           <td>{{course.course_code}}</td>
+           <td>{{course.course_duration}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    <style>
+        #t01{
+                        width: 100%;
+                    }
+                    table,th,td{
+                        border: 1px solid;
+                        color: black;
+                    }
+        </style>
+</body>

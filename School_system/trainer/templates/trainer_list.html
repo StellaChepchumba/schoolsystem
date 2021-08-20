@@ -1,0 +1,41 @@
+<body>
+    <table>
+        {% for  trainer in trainers %}
+        <th>First name</th>
+        <th>Last Name</th>
+        <th>Date of birth</th>
+        <th>Languages</th>
+        <th>Training day</th>
+        <th>E-mail address</th>
+        <th>Date joined</th>
+        <th>Profile</th>
+        <th>Bio</th>
+        <th>Contract</th>
+        <th>Date hired</th>
+        <tr>
+           <td>{{trainer.first_name}}</td>
+           <td>{{trainer.last_name}}</td>
+           <td>{{trainer.age}}</td>
+           <td>{{trainer.date_of_birth}}</td>
+           <td>{{trainer.languages}}</td>
+           <td>{{trainer.Training_day}}</td>
+           <td>{{trainer.Email_address}}</td>
+           <td>{{trainer.Date_joined}}</td>
+           <td>{{trainer.profile}}</td>
+           <td>{{trainer.Bio}}</td>
+           <td>{{trainer.contract}}</td>
+           <td>{{trainer.Date_hired}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    <style>
+        #t01{
+                        width: 100%;
+                    }
+                    table,th,td{
+                        border: 1px solid;
+                        color: black;
+                    }
+        </style>
+</body>

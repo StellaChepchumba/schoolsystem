@@ -1,0 +1,48 @@
+<body>
+    <table>
+        </tr>
+        {% for student in students %}
+        <th>First name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Date of birth</th>
+        <th>Email</th>
+        <th>Nationality</th>
+        <th>Student Id</th>
+        <th>Gender</th>
+        <th>Phone number</th>
+        <th>County</th>
+        <th>Profile</th>
+        <th>Medical report</th>
+        <th>enrollement date</th>
+        <th>Language</th>
+        <th>serial number</th>
+         <tr>
+           <td>{{student.first_name}}</td>
+           <td>{{student.last_name}}</td>
+           <td>{{student.age}}</td>
+           <td>{{student.date_of_birth}}</td>
+           <td>{{student.student_email}}</td>
+           <td>{{student.nationality}}</td>
+           <td>{{student.student_id}}</td>
+           <td>{{student.gender}}</td>
+           <td>{{student.phone_number}}</td>
+           <td>{{student.county}}</td>
+           <td>{{student.profile}}</td>
+           <td>{{student.medical_report}}</td>
+           <td>{{student.date_of_enrollment}}</td>
+           <td>{{student.language}}</td>
+           <td>{{student.serial_number}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <style>
+        #t01{
+                        width: 100%;
+                    }
+                    table,th,td{
+                        border: 1px solid;
+                        color: black;
+                    }
+        </style>
+</body>

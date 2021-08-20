@@ -1,0 +1,34 @@
+<body>
+    <table>
+        {% for Calender in calenders %}
+        <th>Event id</th>
+        <th>Event Name</th>
+        <th>Date and time</th>
+        <th>Event planner</th>
+        <th>Event duration</th>
+        <th>Event participants</th>
+        <th>Events approved by</th>
+        <tr>
+           <td>{{Calender.Events_id}}</td>
+           <td>{{calender.Event_name}}</td>
+           <td>{{calender.Date_and_time}}</td>
+           <td>{{Calender.Event_planner}}</td>
+           <td>{{calender.Event_duration}}</td>
+           <td>{{calender.Event_participants}}</td>
+           <td>{{calender.Events_approved_by}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    <style>
+        #t01{
+                        width: 100%;
+                    }
+                    table,th,td{
+                        border: 1px solid;
+                        color: black;
+                    }
+        </style>
+    
+
+</body>
