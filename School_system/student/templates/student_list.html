@@ -1,5 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    th{
+        background-color: purple;
+        color: white;
+    }
+    tr{
+        color: purple;
+    }
+    td{
+        color: black;
+    }
+    body{
+        background-color: beige;
+    }
+    table{
+width: 800px;
+margin: auto;
+text-align: center;
+table-layout:auto;
+}
+table,tr,td{
+padding: 20px;
+color: purple;
+border: 1px solid rgb(6, 61, 99);
+border-collapse: collapse;
+font-size: 15px;
+background: linear-gradient(top,rgb(130, 238, 229) 0%,rgb(145, 241, 212) 100%);
+text-align: center;
+margin-top: 40px;
+}
+td:hover{
+background: rgb(148, 206, 253) ;
+}
+h1{
+text-align: center;
+color: rgb(82, 226, 226);
+padding-top: 10%;
+}
+img{
+ width:40px;
+ height:50px;
+}
+</style>
 <body>
-    <table>
+     <table>
         </tr>
         {% for student in students %}
         <th>First name</th>
@@ -28,7 +79,7 @@
            <td>{{student.gender}}</td>
            <td>{{student.phone_number}}</td>
            <td>{{student.county}}</td>
-           <td>{{student.profile}}</td>
+           <td><img src="{{student.Profile}}"></td>
            <td>{{student.medical_report}}</td>
            <td>{{student.date_of_enrollment}}</td>
            <td>{{student.language}}</td>
@@ -36,13 +87,6 @@
         </tr>
         {% endfor %}
     </table>
-    <style>
-        #t01{
-                        width: 100%;
-                    }
-                    table,th,td{
-                        border: 1px solid;
-                        color: black;
-                    }
-        </style>
+
 </body>
+</html>

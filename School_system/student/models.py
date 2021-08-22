@@ -22,7 +22,7 @@ class Student(models.Model):
         gender=models.CharField(max_length=6,choices=gender_choices)
         phone_number=models.CharField(max_length=16,null=True)
         county=models.CharField(max_length=12,null=True)
-        profile=models.ImageField()
+        profile=models.ImageField(upload_to='documents/',null=True)
         medical_report=models.FileField()
         date_of_enrollment=models.DateField(max_length=8,null=True)
     # course_name=models.CharField(max_length=10)
