@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="card" style="width: 18rem;">
+          <img src="{{student.profile.url}}" width="80%" height="50%">
+              <p class="card-text">
+                <h2>{{student.full_name}}</h2>
+                <h2>{{student.age}} years old</h2>
+            <h2>{{student.nationality}}</h2>
+            <h2>{{student.language}}</h2>
+            <hr>
+            <h3>{{student.student_email}}</h3>
+              </p>
+            </div>
+          </div>  
+          <style>
+            .card{
+              background-color: purple;
+            align-items: center;
+            margin: 0 auto; 
+            float: none; 
+            margin-bottom: 10px; 
+            margin-top: 30px;
+            }
+            h2{
+                color:white;
+                font-size: 20px;
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            img{
+              padding-top: 10px;
+              padding-left: 10px;
+              padding-right: 10px;
+            border-radius:500%
+          }
+          h3{
+            font-size: 15px;
+            color:white;
+            text-align: center;
+          }
+          .line{
+        color: white;
+          }
+          </style>       
+    </body>
+</html>
+
+
+
+
+
+
+

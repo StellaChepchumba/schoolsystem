@@ -6,87 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    th{
-        background-color: purple;
-        color: white;
-    }
-    tr{
-        color: purple;
-    }
-    td{
-        color: black;
-    }
-    body{
-        background-color: beige;
-    }
-    table{
-width: 800px;
-margin: auto;
-text-align: center;
-table-layout:auto;
-}
-table,tr,td{
-padding: 20px;
-color: purple;
-border: 1px solid rgb(6, 61, 99);
-border-collapse: collapse;
-font-size: 15px;
-background: linear-gradient(top,rgb(130, 238, 229) 0%,rgb(145, 241, 212) 100%);
-text-align: center;
-margin-top: 40px;
-}
-td:hover{
-background: rgb(148, 206, 253) ;
-}
-h1{
-text-align: center;
-color: rgb(82, 226, 226);
-padding-top: 10%;
-}
-img{
- width:40px;
- height:50px;
-}
-</style>
 <body>
-     <table>
-        </tr>
+    <h1>Student List</h1>
+    <style>
+        .table{
+            width: 100%;
+          }
+          .table td, #table th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+            .table tr:nth-child(even){background-color: #F2F2F2;}
+            .table tr:hover {background-color: #ddd;}
+            .table th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: purple;
+                color: white;
+                font-family:sans-serif;
+                text-align: center;
+            }
+        </style>
+    <img class="image" src="https://previews.123rf.com/images/sathishmeraki/sathishmeraki2004/sathishmeraki200400002/144498267-a-girl-working-in-laptop-illustration-concept-of-work-from-home.jpg" height= "20%" width= "20%"/>
+    <table class="table" >
+        <tr>
+            <th>profile</th>
+            <th>First name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Date of birth</th>
+            <th>Email</th>
+            <th>Student Id</th>
+            <th>Gender</th>
+            <th>Medical report</th>
+            <th>enrollement date</th>
+            <th>Language</th>
+            <th>Edit</th>
+         </tr>
         {% for student in students %}
-        <th>First name</th>
-        <th>Last Name</th>
-        <th>Age</th>
-        <th>Date of birth</th>
-        <th>Email</th>
-        <th>Nationality</th>
-        <th>Student Id</th>
-        <th>Gender</th>
-        <th>Phone number</th>
-        <th>County</th>
-        <th>Profile</th>
-        <th>Medical report</th>
-        <th>enrollement date</th>
-        <th>Language</th>
-        <th>serial number</th>
-         <tr>
-           <td>{{student.first_name}}</td>
-           <td>{{student.last_name}}</td>
-           <td>{{student.age}}</td>
-           <td>{{student.date_of_birth}}</td>
-           <td>{{student.student_email}}</td>
-           <td>{{student.nationality}}</td>
-           <td>{{student.student_id}}</td>
-           <td>{{student.gender}}</td>
-           <td>{{student.phone_number}}</td>
-           <td>{{student.county}}</td>
-           <td><img src="{{student.Profile}}"></td>
-           <td>{{student.medical_report}}</td>
-           <td>{{student.date_of_enrollment}}</td>
-           <td>{{student.language}}</td>
-           <td>{{student.serial_number}}</td>
-        </tr>
-        {% endfor %}
-    </table>
+        <tr>
+            {% if student.profile %}
+            <td><img src="{{student.profile.url}}" width="80px" height="100px"></td>
+            {% endif %}
+            <td>{{student.first_name}}</td>
+            <td>{{student.last_name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.date_of_birth}}</td>
+            <td>{{student.student_email}}</td>
+            <td>{{student.student_id}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.date_of_enrollment}}</td>
+            <td>{{student.language}}</td>
+            
 
+          
+             <td>
+            <a href="{% url 'student_profile' id=student.id%}">profile</a>
+             </td>
+             <td>
+            <a href="{% url 'edit_student' id=student.id%}">
+                edit</a>
+                </td>
+    </tr>
+    {% endfor %}
+    </table>
+    <style>
+    .tab{
+        padding: 20px;
+    }
+    h1{
+       float: right;
+        color: purple;
+        padding-right: 500px;
+        padding-top: 100px;
+        font-size: 40px;
+    }
+    .image{
+        float: left;
+        padding-left: 350px;
+     
+    }
+    .table{
+        float: right;
+        size: 50%;
+    }
+    
+    </style>
 </body>
 </html>

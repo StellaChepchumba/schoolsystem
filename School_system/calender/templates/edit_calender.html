@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event</title>
+</head>
+<body>
+    {% block title %}
+
+{% endblock %}
+
+{% block content %}
+<div>
+<form method="post">
+    <h1>Events</h1>
+  {% csrf_token %}
+  <table class="form form-table">
+    {{ form.as_p }}
+  </table>
+  <input class="btn btn-success" type="submit" value="Submit" style=" background-color: purple; border-radius: 10px; width: 100%;">
+
+</form>
+{% endblock %}
+</div>
+
+<style>
+    select{
+        width: 100%;
+        border-radius: 10px;
+        font-size: 15px;
+        border: 1px solid;
+        padding: 8px 10px;
+        border:purple;
+
+    }
+h1{
+color:purple;
+text-align: center;
+/* padding-top: 20px; */
+
+}
+img{
+margin-left: 130px;
+width: 400px;
+}
+form{
+text-align: center;
+padding-top: 20px;
+
+color:purple;
+}
+
+.btn btn-success{
+color: purple;
+}
+div {
+border-radius: 10px;
+background-color:white;
+padding: 20px;
+width: 700px;
+margin-left: 400px;
+
+
+}
+body{
+background-color:#eee;
+}
+*des{
+    border: 1px solid black;
+    width: 600px;
+	height: 120px;
+	
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+        }
+
+
+
+
+
+
+</style>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

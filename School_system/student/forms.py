@@ -8,3 +8,5 @@ class StudentRegistrationForm(forms.ModelForm):
         model=Student
         fields ="__all__"
         widgets={}
+
+       

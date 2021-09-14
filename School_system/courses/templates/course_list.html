@@ -6,71 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    tr{
-        color: purple;
-    }
-    td{
-        color: black;
-    }
-    body{
-        background-color: beige;
-    }
-    th{
-        background-color: purple;
-        color: white;
-    }
-    table{
-width: 800px;
-margin: auto;
-text-align: center;
-table-layout:auto;
-}
-table,tr,td{
-padding: 20px;
-color: purple;
-border: 1px solid rgb(6, 61, 99);
-border-collapse: collapse;
-font-size: 15px;
-background: linear-gradient(top,rgb(130, 238, 229) 0%,rgb(145, 241, 212) 100%);
-text-align: center;
-margin-top: 40px;
-}
-td:hover{
-background: rgb(148, 206, 253) ;
-}
-h1{
-text-align: center;
-color: rgb(82, 226, 226);
-padding-top: 10%;
-}
-img{
- width:40px;
- height:50px;
-}
-</style>
-
 <body>
-    <table>
-        {% for courses  in course %}
-        <th>Course name</th>
-        <th>Date started</th>
-        <th>Syllabus</th>
-        <th>Course id</th>
-        <th>Time in hours</th>
-        <th>Course code</th>
-        <th>Course duration</th>
-<tr>
-           <td>{{course.course_name}}</td>
-           <td>{{course.Date_started}}</td>
-           <td>{{course.syllabus}}</td>
-           <td>{{course.course_id}}</td>
-           <td>{{course.Time_in_hours}}</td>
-           <td>{{course.course_code}}</td>
-           <td>{{course.course_duration}}</td>
+    <style>
+        .table{
+            width: 100%;
+          }
+          .table td, #table th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+            .table tr:nth-child(even){background-color: #F2F2F2;}
+            .table tr:hover {background-color: #ddd;}
+            .table th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: purple;
+                color: white;
+                font-family:sans-serif;
+                text-align: center;
+            }
+            h1{
+                text-align: center;
+                color: purple;
+            }
+        </style>
+        <h1>courses List</h1>
+        <img class="image" src="https://i.pinimg.com/736x/4b/4b/c8/4b4bc8f0e26e86fcbdfb5b7a898ee910.jpg" height= "20%" width= "20%"/>
+        
+    <table class="table" >
+        <tr>
+            <th>Course name</th>
+            <th>Date started</th>
+            <th>Syllabus</th>
+            <th>Course id</th>
+            <th>Time in hours</th>
+            <th>Course code</th>
+            <th>Course duration</th> 
+            <th>Update</th> 
+            <th>Edit</th> 
 
         </tr>
-        {% endfor %}
+        {% for courses in course %}
+        <tr>
+            <td>{{courses.Course_name}}</td>
+            <td>{{courses.Date_started}}</td>
+            <td>{{courses.syllabus}}</td>
+            <td>{{courses.Course_id}}</td>
+            <td>{{courses.Time_in_hours}}</td>
+            <td>{{courses.Course_code}}</td>
+            <td>{{courses.Course_duration}}</td>
+            <td><a href="{% url 'courses_details' id=courses.id%}">Details</a></td>
+            <td><a href="{% url 'edit_courses' id=courses.id%}">edit</a></td>
+    </tr>
+    {% endfor %}
     </table>
+    <style>
+    .tab{
+        padding: 20px;
+    }
+    .image{
+
+        float: left;
+        padding-left: 350px;
+    }
+    h1{
+        float: right;
+         color: purple;
+         padding-right: 500px;
+         padding-top: 100px;
+         font-size: 40px;
+        }
+    
+    </style>
 </body>
 </html>
+
+           
+        

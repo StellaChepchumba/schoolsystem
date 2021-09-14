@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Trainer form</title>
+</head>
+<body>
+    <style>
+        h1{
+          text-align: center;
+      }
+        body{
+            background-color: lavender;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: rgb(109, 44, 109);
+        }
+        input{
+           width: 100%;
+           outline: none;
+           border: 1px solid ;
+           font-size: 15px;
+           padding: 8px 8px;
+           border-radius: 20px;
+       }
+       select{
+           width: 100%;
+           padding: 8px 10px;
+           border-radius: 3px;
+           transition: all 0.3;
+       }
+       .wrapper{
+      max-width: 500px;
+      width: 80%;
+      background: #fff;
+      margin: 20px auto;
+      padding: 30px;
+      box-shadow: 1px 1px 2px rgba(0,0,0, 125);
+       }
+       .wrapper.form.inputfield{
+           margin-bottom: 15px;
+           display: flex;
+           align-items: center;
+       }
+       .wrapper.wrapper.form.input_field label{
+           width: 200px;
+           color: blueviolet;
+           margin-right: 10px;
+           font-size: 14px;
+       }
+      button{
+        color: rgb(109, 44, 109);
+          top: 30px;
+          height: 50px;
+          width :50%;
+          border-radius: 6px;
+          align-items: center;
+          font-size: 1.4rem;
+      }
+      .pic{
+          background-size: contain;
+          width: 80%;
+          text-align: center;
+          height: 150px;
+      }
+      button:hover{
+          color: white;
+          background-color: darkgrey;
+          cursor: pointer;
+      }
+      *des{
+        border: 1px solid black;
+        width: 600px;
+        height: 120px;
+        
+        padding: 5px;
+        font-family: Tahoma, sans-serif;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+            }
+            textarea{
+                width: 95%;
+            }
+    </style>
+   <div class="wrapper">
+       <div class="form">
+    <form method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <div class="div">
+            <div class="form">
+                <img src="data:image/png;base64,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">
+        <h1>Edit Trainer</h1>
+        {{form.as_p}}
+        <button>Submit</button>
+    </form>
+    </div>
+    </div>
+    <div class="div"></div>
+    <div id="div"></div>
+</body>
+</html>
+
+
+

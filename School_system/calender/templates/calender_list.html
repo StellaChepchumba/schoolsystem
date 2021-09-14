@@ -1,82 +1,92 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calender</title>
 </head>
 <body>
-</body>
-</html>
-<style>
-    tr{
+
+  <img class="images" src="https://pbs.twimg.com/profile_images/1315616987213713408/QV5ux-9Q.jpg" alt="" height="8%" width="8%">
+    <h1> AkiraChix Calender</h1>
+    <a class="home" href="{% url 'home_view' %}">Home</a>
+    {% block content %}
+    {{ calender }}
+    {% endblock %}
+   
+    
+    <style>
+    
+    h1{
+        text-align: center;
         color: purple;
     }
-    td{
-        color: black;
+    .calendar {
+      width:78%;
+      margin: auto;
+      font-size: 13px;
     }
-    body{
-        background-color: beige;
+    
+    .calendar tr, .calendar td {
+      border: 1px solid purple;
     }
-    th{
-        background-color: purple;
-        color: white;
+    
+    .calendar th {
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
     }
-    table{
-width: 800px;
-margin: auto;
-text-align: center;
-table-layout:auto;
+    
+    .calendar td {
+      width: 70px;
+      height: 50px;
+      padding: 20px 0px 0px 5px;
+    }
+    
+    .month {
+      font-size: 25px;
+    }
+    
+    .date {
+      font-size: 16px;
+    }
+    
+    ul {
+      height: 100%;
+      padding: 0px 5px 0px 20px;
+    }
+    
+    a {
+      color:purple;
+      text-decoration: none;
+      padding-left: 50px;
+      font-size: 24px;
+      font-family: fantasy;
+    }
+    h1{
+      float: right;
+       color: purple;
+       padding-right: 500px;
+       padding-top: 100px;
+       font-size: 40px;
+   }
+   .image{
+    float: left;
+    padding-left: 350px;
+ 
 }
-table,tr,td{
-padding: 20px;
-color: purple;
-border: 1px solid rgb(6, 61, 99);
-border-collapse: collapse;
-font-size: 15px;
-/* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'L
- Unicode', Geneva, Verdana, sans-serif; */
-background: linear-gradient(top,rgb(130, 238, 229) 0%,rgb(145, 241, 212) 100%);
-text-align: center;
-margin-top: 40px;
+.home{
+float: right;
+padding-top: 85px;
+padding-right: 110px;
 }
-td:hover{
-background: rgb(148, 206, 253) ;
+button{
+  border-radius: 5px;
+  height: 5px;
 }
-h1{
-text-align: center;
-color: rgb(82, 226, 226);
-padding-top: 10%;
-}
-img{
- width:40px;
- height:50px;
-}
-</style>
-    <table>
-        {% for Calender in calenders %}
-        <th>Event id</th>
-        <th>Event Name</th>
-        <th>Date and time</th>
-        <th>Event planner</th>
-        <th>Event duration</th>
-        <th>Event participants</th>
-        <th>Events approved by</th>
-        <tr>
-           <td>{{Calender.Events_id}}</td>
-           <td>{{calender.Event_name}}</td>
-           <td>{{calender.Date_and_time}}</td>
-           <td>{{Calender.Event_planner}}</td>
-           <td>{{calender.Event_duration}}</td>
-           <td>{{calender.Event_participants}}</td>
-           <td>{{calender.Events_approved_by}}</td>
-
-        </tr>
-        {% endfor %}
-    </table>
-    </body>
-    </html>
-   
+</style> 
+  <a href="{%url 'calender_list' %}">Add Event</a></td>
+  <td><a href="{ %url'edit_calender' id=calender.id %}">Edit</a></td>
+</body>
+</html>

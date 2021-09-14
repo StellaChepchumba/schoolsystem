@@ -1,10 +1,12 @@
 from django.urls import path
-from .views import register_calender,calender_list
+from . import views
 
 
 
-urlpatterns=[
-    path('register/',register_calender,name='register_calender'),
-    path('calender_list/',calender_list,name='calender_list'),
+urlpatterns = [
+    path('calender/', views.CalendarView.as_view(), name='calendar'),
+    path('forms/', views.event, name='calender_list'), 
+    path('upcoming_event/<int:id>/',views.upcoming_event,name='upcoming_event'),
+    path("edit/<int:id>/",views.edit_calender,name="edit_calender"),
+
 ]
-

@@ -32,5 +32,8 @@ class Student(models.Model):
     )
         language=models.CharField(max_length=10,choices=language_choices)
         serial_number=models.CharField(max_length=10, blank=True, null=True)
+        def full_name(self):
+            return f"{self.first_name} {self.last_name}"
+
 
 # Create your models here.
